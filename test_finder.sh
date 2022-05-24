@@ -19,7 +19,7 @@ function get_test_list() {
 function generate_test_list() {
     #DEFAULT_TEST_FILES="$OSD_TEST_PATH/opensearch-dashboards/*.js"
     #DEFAULT_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/alerting-dashboards-plugin/*"
-    DEFAULT_TEST_FILES=",$OSD_PLUGIN_TEST_PATH/anomaly-detection-dashboards-plugin/*"
+    DEFAULT_TEST_FILES="$OSD_PLUGIN_TEST_PATH/anomaly-detection-dashboards-plugin/*"
     #DEFAULT_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/gantt-chart-dashboards/*"
     #DEFAULT_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/index-management-dashboards-plugin/*"
     #DEFAULT_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/observability-dashboards/*"
@@ -32,10 +32,10 @@ function generate_test_list() {
 }
 
 function generate_test_list_from_build_manifest() {
-    MANIFEST_TEST_FILES="$OSD_TEST_PATH/opensearch-dashboards/*.js"
+    #MANIFEST_TEST_FILES="$OSD_TEST_PATH/opensearch-dashboards/*.js"
 
     #grep -q 'alertingDashboards' $OSD_BUILD_MANIFEST && MANIFEST_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/alerting-dashboards-plugin/*" || true
-    grep -q 'anomalyDetectionDashboards' $OSD_BUILD_MANIFEST && MANIFEST_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/anomaly-detection-dashboards-plugin/*" || true
+    grep -q 'anomalyDetectionDashboards' $OSD_BUILD_MANIFEST && MANIFEST_TEST_FILES="$OSD_PLUGIN_TEST_PATH/anomaly-detection-dashboards-plugin/*" || true
     #grep -q 'ganttChartDashboards' $OSD_BUILD_MANIFEST && MANIFEST_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/gantt-chart-dashboards/*" || true
     #grep -q 'indexManagementDashboards' $OSD_BUILD_MANIFEST && MANIFEST_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/index-management-dashboards-plugin/*" || true
     #grep -q 'observabilityDashboards' $OSD_BUILD_MANIFEST && MANIFEST_TEST_FILES+=",$OSD_PLUGIN_TEST_PATH/observability-dashboards/*" || true
