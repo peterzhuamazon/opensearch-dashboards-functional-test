@@ -91,7 +91,7 @@ PASSWORD=`echo $CREDENTIAL | awk -F ':' '{print $2}'`
 if [ -z "$BROWSER_PATH" ]
 then
   #BROWSER_PATH="chromium"
-  BROWSER_PATH="chrome"
+  BROWSER_PATH="/usr/bin/firefox"
 fi
 
 . ./test_finder.sh
