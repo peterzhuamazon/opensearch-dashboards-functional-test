@@ -90,8 +90,8 @@ PASSWORD=`echo $CREDENTIAL | awk -F ':' '{print $2}'`
 # User can send custom browser path through env variable
 if [ -z "$BROWSER_PATH" ]
 then
-  BROWSER_PATH="chromium"
-  #BROWSER_PATH="electron"
+  #BROWSER_PATH="chromium"
+  BROWSER_PATH="firefox"
 fi
 
 . ./test_finder.sh
